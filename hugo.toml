@@ -1,36 +1,85 @@
 baseURL = 'https://qingkongzhiqian.github.io/my-blog/'
 languageCode = 'zh-cn'
-title = 'My Blog'
+title = '青空之浅'
 theme = 'PaperMod'
+
 [pagination]
-  pagerSize = 5
+  pagerSize = 10
 
 [params]
   env = "production"
+  description = "记录技术与生活"
+  author = "qingkongzhiqian"
   defaultTheme = "auto"
   showReadingTime = true
   showShareButtons = false
   showPostNavLinks = true
   showBreadCrumbs = true
   showCodeCopyButtons = true
+  disableSpecial1stPost = false
+  hidemeta = false
+  ShowToc = true
+  TocOpen = false
+  ShowWordCount = true
 
-[params.homeInfoParams]
-  Title = "Welcome"
-  Content = "This is my blog"
+  [params.profileMode]
+    enabled = true
+    title = "青空之浅"
+    subtitle = "记录技术与生活的点滴"
+    imageUrl = ""
+    imageWidth = 150
+    imageHeight = 150
+
+    [[params.profileMode.buttons]]
+      name = "文章"
+      url = "/posts/"
+    [[params.profileMode.buttons]]
+      name = "标签"
+      url = "/tags/"
+
+  [params.cover]
+    linkFullImages = true
+    responsiveImages = true
+
+  [params.editPost]
+    disabled = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
 
 [menu]
 [[menu.main]]
-  name = "Archives"
-  url = "/archives/"
+  name = "首页"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
   weight = 5
 [[menu.main]]
-  name = "Tags"
-  url = "/tags/"
+  name = "归档"
+  url = "/archives/"
   weight = 10
 [[menu.main]]
-  name = "Search"
-  url = "/search/"
+  name = "标签"
+  url = "/tags/"
   weight = 15
+[[menu.main]]
+  name = "搜索"
+  url = "/search/"
+  weight = 20
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    noClasses = true
