@@ -1,55 +1,104 @@
 :root {
   --gap: 24px;
-  --content-gap: 20px;
-  --nav-width: 1024px;
-  --main-width: 720px;
-  --header-height: 60px;
+  --content-gap: 22px;
+  --nav-width: 1080px;
+  --main-width: 760px;
+  --header-height: 64px;
   --footer-height: 60px;
   --radius: 12px;
 }
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  letter-spacing: -0.01em;
+html[data-theme="light"] {
+  --theme: rgb(250, 250, 250);
+  --entry: rgb(255, 255, 255);
+  --primary: rgb(24, 24, 27);
+  --secondary: rgb(82, 82, 91);
+  --tertiary: rgb(228, 228, 231);
+  --content: rgb(39, 39, 42);
+  --code-bg: rgb(244, 244, 245);
+  --border: rgb(228, 228, 231);
 }
 
-.profile .profile_inner h1 {
-  font-size: 2.4rem;
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  letter-spacing: -0.01em;
+  background: var(--theme);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--theme) 88%, white 12%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+header .logo a {
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+#menu a {
+  font-size: 0.94rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.home-info {
+  min-height: 0;
+  padding: 30px;
+  margin-top: 18px;
+  margin-bottom: 26px;
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.home-info .entry-header h1 {
+  font-size: 2.1rem;
   font-weight: 700;
   letter-spacing: -0.04em;
+  line-height: 1.15;
 }
 
-.profile .profile_inner .tagline {
-  font-size: 1.05rem;
+.home-info .entry-content {
+  margin-top: 10px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--secondary);
+}
+
+.home-info .entry-footer {
+  margin-top: 14px;
+}
+
+.social-icons a {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-1px);
   opacity: 0.85;
-  line-height: 1.6;
 }
 
-.profile .profile_inner .buttons {
-  gap: 12px;
-}
-
-.profile .profile_inner .button {
-  padding: 10px 28px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  transition: all 0.2s ease;
-}
-
-.profile .profile_inner .button:hover {
-  transform: translateY(-2px);
+.social-icons a svg {
+  width: 21px;
+  height: 21px;
 }
 
 .post-entry {
   border-radius: 12px;
-  margin-bottom: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .post-entry:hover {
-  transform: translateY(-3px);
+  border-color: rgb(212, 212, 216);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transform: none;
 }
 
 .post-entry .entry-header h2 {
@@ -58,80 +107,53 @@ body {
   letter-spacing: -0.02em;
 }
 
+.entry-content {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .post-content h2 {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin-top: 2em;
 }
 
 .post-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.22rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
-.post-content p {
-  line-height: 1.8;
+.post-content p,
+.post-content li {
+  line-height: 1.85;
 }
 
 .post-content pre {
   border-radius: 10px;
-  padding: 1.2em;
+  padding: 1.1em;
 }
 
 .post-content code {
-  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, monospace;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, monospace;
   font-size: 0.88em;
 }
 
 .post-content blockquote {
   border-left: 3px solid var(--tertiary);
-  padding-left: 1em;
-  opacity: 0.9;
+  background: var(--code-bg);
+  border-radius: 0 8px 8px 0;
+  padding: 0.7em 1em;
   font-style: italic;
-}
-
-.post-content table {
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .toc {
   border-radius: 10px;
-  padding: 1em 1.4em;
-}
-
-#searchResults .post-entry {
-  border-radius: 10px;
-}
-
-.social-icons a {
-  transition: transform 0.2s ease;
-}
-
-.social-icons a:hover {
-  transform: translateY(-2px);
-}
-
-.social-icons a svg {
-  width: 22px;
-  height: 22px;
+  border: 1px solid var(--border);
 }
 
 footer {
-  opacity: 0.6;
-  font-size: 0.85rem;
-}
-
-header .logo a {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-}
-
-#menu a {
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  opacity: 0.72;
+  font-size: 0.86rem;
+  border-top: 1px solid var(--border);
 }

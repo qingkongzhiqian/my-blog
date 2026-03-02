@@ -1,0 +1,6 @@
+# Hugo build output
+public/
+
+# OS
+.DS_Store
+Thumbs.db

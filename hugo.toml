@@ -1,6 +1,6 @@
 baseURL = 'https://qingkongzhiqian.github.io/my-blog/'
 languageCode = 'en'
-title = 'Qingkong'
+title = 'yangning'
 theme = 'PaperMod'
 
 [pagination]
@@ -9,9 +9,9 @@ theme = 'PaperMod'
 [params]
   env = "production"
   description = "Software Engineer · Writing about code, systems, and ideas."
-  author = "Qingkong"
+  author = "yangning"
   DateFormat = "Jan 2, 2006"
-  defaultTheme = "dark"
+  defaultTheme = "light"
   disableThemeToggle = false
   showReadingTime = true
   showShareButtons = false
@@ -26,26 +26,17 @@ theme = 'PaperMod'
   comments = false
 
   [params.profileMode]
-    enabled = true
-    title = "Qingkong"
-    subtitle = "Software Engineer · Writing about code, systems, and ideas."
-    imageUrl = ""
-    imageWidth = 140
-    imageHeight = 140
+    enabled = false
 
-    [[params.profileMode.buttons]]
-      name = "Blog"
-      url = "/posts/"
-    [[params.profileMode.buttons]]
-      name = "Projects"
-      url = "/tags/"
-
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:yangning9371@gmail.com"
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/qingkongzhiqian"
   [[params.socialIcons]]
-    name = "rss"
-    url = "/index.xml"
+    name = "twitter"
+    url = "https://twitter.com/yangning9371"
 
   [params.cover]
     linkFullImages = true
@@ -68,32 +59,32 @@ theme = 'PaperMod'
 
 [menu]
 [[menu.main]]
-  name = "Home"
+  name = "Blog"
   url = "/"
   weight = 1
 [[menu.main]]
-  name = "Blog"
-  url = "/posts/"
+  name = "About me"
+  pageRef = "about"
+  weight = 2
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/qingkongzhiqian"
+  weight = 3
+[[menu.main]]
+  name = "Email"
+  url = "mailto:yangning9371@gmail.com"
+  weight = 4
+[[menu.main]]
+  name = "X"
+  url = "https://twitter.com/yangning9371"
   weight = 5
-[[menu.main]]
-  name = "Archive"
-  url = "/archives/"
-  weight = 10
-[[menu.main]]
-  name = "Tags"
-  url = "/tags/"
-  weight = 15
-[[menu.main]]
-  name = "Search"
-  url = "/search/"
-  weight = 20
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
 [markup]
   [markup.highlight]
-    style = "monokai"
+    style = "tango"
     lineNos = false
     noClasses = true
     guessSyntax = true
