@@ -1,0 +1,36 @@
+baseURL = 'https://qingkongzhiqian.github.io/my-blog/'
+languageCode = 'zh-cn'
+title = 'My Blog'
+theme = 'PaperMod'
+[pagination]
+  pagerSize = 5
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+
+[params.homeInfoParams]
+  Title = "Welcome"
+  Content = "This is my blog"
+
+[menu]
+[[menu.main]]
+  name = "Archives"
+  url = "/archives/"
+  weight = 5
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 10
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 15
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
