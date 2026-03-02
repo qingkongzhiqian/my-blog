@@ -1,6 +1,6 @@
 baseURL = 'https://qingkongzhiqian.github.io/my-blog/'
-languageCode = 'zh-cn'
-title = '青空之浅'
+languageCode = 'en'
+title = 'Qingkong'
 theme = 'PaperMod'
 
 [pagination]
@@ -8,38 +8,51 @@ theme = 'PaperMod'
 
 [params]
   env = "production"
-  description = "记录技术与生活"
-  author = "qingkongzhiqian"
-  defaultTheme = "auto"
+  description = "Software Engineer · Writing about code, systems, and ideas."
+  author = "Qingkong"
+  DateFormat = "Jan 2, 2006"
+  defaultTheme = "dark"
+  disableThemeToggle = false
   showReadingTime = true
   showShareButtons = false
   showPostNavLinks = true
-  showBreadCrumbs = true
+  showBreadCrumbs = false
   showCodeCopyButtons = true
   disableSpecial1stPost = false
   hidemeta = false
   ShowToc = true
   TocOpen = false
-  ShowWordCount = true
+  ShowWordCount = false
+  comments = false
 
   [params.profileMode]
     enabled = true
-    title = "青空之浅"
-    subtitle = "记录技术与生活的点滴"
+    title = "Qingkong"
+    subtitle = "Software Engineer · Writing about code, systems, and ideas."
     imageUrl = ""
-    imageWidth = 150
-    imageHeight = 150
+    imageWidth = 140
+    imageHeight = 140
 
     [[params.profileMode.buttons]]
-      name = "文章"
+      name = "Blog"
       url = "/posts/"
     [[params.profileMode.buttons]]
-      name = "标签"
+      name = "Projects"
       url = "/tags/"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/qingkongzhiqian"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
 
   [params.cover]
     linkFullImages = true
     responsiveImages = true
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
 
   [params.editPost]
     disabled = true
@@ -55,23 +68,23 @@ theme = 'PaperMod'
 
 [menu]
 [[menu.main]]
-  name = "首页"
+  name = "Home"
   url = "/"
   weight = 1
 [[menu.main]]
-  name = "文章"
+  name = "Blog"
   url = "/posts/"
   weight = 5
 [[menu.main]]
-  name = "归档"
+  name = "Archive"
   url = "/archives/"
   weight = 10
 [[menu.main]]
-  name = "标签"
+  name = "Tags"
   url = "/tags/"
   weight = 15
 [[menu.main]]
-  name = "搜索"
+  name = "Search"
   url = "/search/"
   weight = 20
 
@@ -80,6 +93,9 @@ theme = 'PaperMod'
 
 [markup]
   [markup.highlight]
-    style = "dracula"
+    style = "monokai"
     lineNos = false
     noClasses = true
+    guessSyntax = true
+  [markup.goldmark.renderer]
+    unsafe = true
